@@ -1,0 +1,164 @@
+@import url("reset.css");
+@import url("nav.css");
+:root {
+  --bg-color-primary: white;
+  --bg-color-secondary: #587C83;
+  --fg-color-primary: black;
+  --border-gray: #707070;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+main.content {
+  width: 100%;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+footer {
+  display: flex;
+  min-height: 92px;
+  background-color: #587C83;
+  margin-top: 160px;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+footer .footer-links {
+  display: flex;
+  gap: 45px;
+}
+footer .footer-links a {
+  color: inherit;
+  text-decoration: none;
+}
+footer .footer-socials {
+  display: flex;
+  gap: 45px;
+}
+
+.hero .hero-image {
+  position: relative;
+  width: 1500px;
+  height: 530px;
+  border: 1px solid var(--border-gray);
+  margin: 0 auto 160px auto;
+}
+.hero .hero-image .overlay {
+  background-color: var(--bg-color-secondary);
+  opacity: 0.6;
+}
+
+.featured {
+  display: flex;
+  width: 81.5%;
+  margin: 0 auto;
+}
+.featured .text {
+  padding-left: 40px;
+}
+.featured .text h1, .featured .text h2, .featured .text h3, .featured .text h4, .featured .text h5, .featured .text h6 {
+  margin-bottom: 45px;
+  text-align: center;
+}
+.featured .text p {
+  font-weight: bold;
+}
+
+button.add-to-cart {
+  width: 222px;
+  height: 68px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+button.add-to-cart:hover {
+  background-color: whitesmoke;
+}
+button.add-to-cart:active {
+  background-color: lightgray;
+}
+
+.home .books-flex {
+  display: flex;
+  justify-content: space-around;
+}
+.home .book-wrap {
+  display: flex;
+  width: 425px;
+  flex-direction: column;
+  align-items: center;
+}
+.home .book-wrap .price {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.about .featured {
+  margin-bottom: 210px;
+}
+
+.books .books-section {
+  margin: 0 0 315px 50px;
+}
+.books .books-section:last-of-type {
+  margin-bottom: 0;
+}
+.books .books-section h3 {
+  margin: 0 0 65px 15px;
+  font-size: 26px;
+}
+.books .books-section .books-flex {
+  display: flex;
+  gap: 40px;
+}
+.books .books-section .books-flex .book-wrap {
+  display: flex;
+  width: 570px;
+  align-items: center;
+}
+.books .books-section .books-flex .book-wrap img {
+  margin-right: 50px;
+}
+.books .books-section .books-flex .book-wrap .text p {
+  margin-bottom: 45px;
+}
+.books .books-section .books-flex .book-wrap .text .price {
+  margin-bottom: 35px;
+  font-weight: bold;
+}
+
+.blog .blog-section {
+  height: 463px;
+}
+.blog .blog-section .multi-showcase {
+  height: 100%;
+  margin-left: 90px;
+}
+.blog .blog-section .multi-showcase img {
+  display: inline-block;
+  height: 100%;
+  padding: 40px 0;
+  margin-right: 110px;
+}
+.blog .blog-section .multi-showcase img:last-of-type {
+  margin-right: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
