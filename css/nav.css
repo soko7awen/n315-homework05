@@ -53,12 +53,15 @@ nav.navbar ul li {
   align-items: center;
 }
 nav.navbar ul li a {
-  display: block;
+  display: flex;
   width: fit-content;
+  align-items: center;
   color: inherit;
   text-decoration: none;
 }
-nav.navbar ul li img {
+nav.navbar ul li a img {
+  width: 47px;
+  height: 47px;
   margin-left: 10px;
 }
 
