@@ -40,6 +40,9 @@ footer {
   align-items: center;
   color: var(--fg-color-secondary);
 }
+footer span {
+  text-wrap: nowrap;
+}
 footer .footer-links {
   display: flex;
   gap: 45px;
@@ -121,6 +124,7 @@ footer .footer-socials {
 .featured {
   display: flex;
   margin: 0 auto;
+  align-items: center;
 }
 
 .overlay {
@@ -132,12 +136,13 @@ footer .footer-socials {
 
 .home .hero .text {
   left: unset;
-  right: 185px;
+  right: 12.65%;
   width: fit-content;
 }
 .home .books-flex {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .home .book-wrap {
   display: flex;
@@ -157,14 +162,20 @@ footer .footer-socials {
   width: 81.5%;
   margin-bottom: 210px;
 }
+.about .featured img {
+  max-width: 393px;
+}
 .about .featured .text {
   padding-left: 40px;
 }
 .about .featured .text h1, .about .featured .text h2, .about .featured .text h3, .about .featured .text h4, .about .featured .text h5, .about .featured .text h6 {
   margin-bottom: 45px;
   text-align: center;
+  text-wrap: nowrap;
 }
-.about .featured .text p {
+.about .featured .text .description {
+  min-width: 450px;
+  max-width: 1135px;
   font-weight: bold;
 }
 
@@ -181,6 +192,7 @@ footer .footer-socials {
 .books .books-section .books-flex {
   display: flex;
   gap: 40px;
+  flex-wrap: wrap;
 }
 .books .books-section .books-flex .book-wrap {
   display: flex;
@@ -297,6 +309,53 @@ footer .footer-socials {
 }
 .cart .book-entry .text {
   margin-left: 22px;
+}
+
+/*
+Device ranges from W3Schools:
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+*/
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra small devices (phones, 600px and down) */
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+  footer .footer-links {
+    gap: 25px;
+  }
+  footer .footer-socials {
+    gap: 25px;
+  }
+  footer .footer-socials a {
+    width: 37px;
+  }
+}
+/* Medium devices (landscape tablets, 992px and down) */
+@media only screen and (max-width: 992px) {
+  .about .featured img {
+    width: round(30vw, 100px);
+  }
+  .about .featured .text h2 {
+    font-size: 16px;
+  }
+  .about .featured .text h3 {
+    font-size: 13px;
+  }
+  .about .featured .text .description {
+    min-width: unset;
+    font-size: 8px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+  footer span {
+    text-wrap: initial;
+  }
+  footer .footer-links {
+    gap: 10px;
+  }
+  footer .footer-socials {
+    gap: 10px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -43,6 +43,10 @@ footer {
     align-items: center;
     color: var(--fg-color-secondary);
 
+    span {
+        text-wrap: nowrap;
+    }
+
     .footer-links {
         display: flex;
         gap: 45px;
@@ -134,6 +138,7 @@ footer {
 .featured {
     display: flex;
     margin: 0 auto;
+    align-items: center;
 }
 
 .overlay {
@@ -148,7 +153,7 @@ footer {
     .hero {
         .text {
             left: unset;
-            right: 185px;
+            right: 12.65%;
             width: fit-content;
         }
     }
@@ -156,6 +161,7 @@ footer {
     .books-flex {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .book-wrap {
@@ -182,15 +188,22 @@ footer {
         width: 81.5%;
         margin-bottom: 210px;
 
+        img {
+            max-width: 393px;
+        }
+
         .text {
             padding-left: 40px;
 
             h1, h2, h3, h4, h5, h6 {
                 margin-bottom: 45px;
                 text-align: center;
+                text-wrap: nowrap
             }
 
-            p {
+            .description {
+                min-width: 450px;
+                max-width: 1135px;
                 font-weight: bold;
             }
         }
@@ -213,6 +226,7 @@ footer {
         .books-flex {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap;
 
             .book-wrap {
                 display: flex;
@@ -363,6 +377,80 @@ footer {
 
         .text {
             margin-left: 22px;
+        }
+    }
+}
+
+/*
+Device ranges from W3Schools:
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+*/
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+} 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+    footer {
+        .footer-links {
+            gap: 25px;
+        }
+
+        .footer-socials {
+            gap: 25px;
+
+            a {
+                width: 37px;
+            }
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 992px and down) */
+@media only screen and (max-width: 992px) {
+    .about {
+        .featured {
+            img {
+                width: round(30vw, 100px);
+            }
+
+            .text {
+                h2 {
+                    font-size: 16px;
+                }
+                h3 {
+                    font-size: 13px;
+                }
+                .description {
+                    min-width: unset;
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+    footer {
+        span {
+            text-wrap: initial;
+        }
+
+        .footer-links {
+            gap: 10px;
+        }
+
+        .footer-socials {
+            gap: 10px;
         }
     }
 }

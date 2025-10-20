@@ -25,6 +25,7 @@ nav.navbar {
     .search-box {
         --search-box-height: 44px;
         position: relative;
+        min-width: 275px;
         width: 604px;
         height: var(--search-box-height);
         margin: 0 115px;
