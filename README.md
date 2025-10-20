@@ -1,12 +1,14 @@
-# N315 - Homework 03
+# N315 - Homework 05
 
-## "Homestuck Daily" homepage to showcase routing and HTML injection for a SPA (Single-Page App) experience.
+## "The BookNook" book-store website to shocase all we have learned so far, including but not limited to: MVC, html injection, alerts, and responsivity.
 
-[Web4 Link](https://in-info-web4.luddy.indianapolis.iu.edu/~hhamelin/Y4/FA25/N315/homework03)
+[Web4 Link](https://in-info-web4.luddy.indianapolis.iu.edu/~hhamelin/Y4/FA25/N315/homework05)
 
-Simple 5 page website to showcase the utlity of routing and HTML injection. https://www.homestuckdaily.com/ used for reference.
+To develop for this site you do need to install the dependencies.
 
-To develop for this site you do need to install scss.
+`npm i`
+
+And to install sass for development.
 
 `npm i -g sass`
 

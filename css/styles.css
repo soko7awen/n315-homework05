@@ -278,4 +278,25 @@ footer .footer-socials {
   opacity: 1;
 }
 
+.cart {
+  min-height: 1734px;
+}
+.cart .book-entry {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding: 114px 140px;
+  margin: 100px auto;
+}
+.cart .book-entry:first-of-type {
+  padding-top: 0;
+  margin-top: 0;
+}
+.cart .book-entry img {
+  width: 205px;
+  height: 317px;
+}
+.cart .book-entry .text {
+  margin-left: 22px;
+}
+
 /*# sourceMappingURL=styles.css.map */
