@@ -2,6 +2,9 @@
 @import url("nav.css");
 
 :root {
+    --h2-font-size: 32px;
+    --h3-font-size: 26px;
+
     --bg-color-primary: white;
     --bg-color-secondary: #587C83;
     --fg-color-primary: black;
@@ -13,11 +16,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     h2 {
-        font-size: 32px;
+        font-size: var(--h2-font-size);
     }
 
     h3 {
-        font-size: 26px;
+        font-size: var(--h3-font-size);
     }
 }
 
@@ -171,7 +174,7 @@ footer {
         align-items: center;
 
         .price {
-            font-size: 32px;
+            font-size: var(--h2-font-size);
             font-weight: bold;
         }
 
@@ -227,6 +230,7 @@ footer {
             display: flex;
             gap: 40px;
             flex-wrap: wrap;
+            justify-content: center;
 
             .book-wrap {
                 display: flex;
@@ -278,24 +282,31 @@ footer {
 
     .blog-section {
         display: flex;
-        width: 76.25%;
+        width: 95%;
+        max-width: 1464px;
         height: 463px;
         background-color: var(--bg-color-secondary);
         margin: 0 auto 125px auto;
         align-items: center;
         text-align: center;
         color: var(--fg-color-secondary);
-        
-          .multi-showcase {
+
+        >img {
             height: 100%;
-            margin-left: 90px;
-            flex-shrink: 0;
+            flex-shrink: 1;
+        }
+        
+        .multi-showcase {
+            display: flex;
+            width: 614px;
+            height: 100%;
+            margin-left: 6.148%;
+            justify-content: space-between;
 
             img {
-                display: inline-block;
                 height: 100%;
                 padding: 40px 0;
-                margin-right: 110px;
+                object-fit: contain;
                 
                 &:last-of-type {
                     margin-right: 0;
@@ -305,7 +316,12 @@ footer {
           
           .text {
             width: 427px;
+            padding: 0 10px;
             margin: 0 auto;
+
+            h2 {
+                text-wrap: nowrap;
+            }
 
             p.description {
                 height: 124px;
@@ -391,11 +407,6 @@ https://www.w3schools.com/css/css_rwd_mediaqueries.asp
 
 } 
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
-}
-
 /* Large devices (laptops/desktops, 1200px and down) */
 @media only screen and (max-width: 1200px) {
     footer {
@@ -411,11 +422,53 @@ https://www.w3schools.com/css/css_rwd_mediaqueries.asp
             }
         }
     }
+
+    .hero {
+        height: 365px;
+    }
+    
+    .blog {
+        --h2-font-size: 28px;
+        --h3-font-size: 22px;
+        font-size: 14px;
+
+        .blog-section {
+            .multi-showcase {
+                justify-content: space-around;
+
+                img {
+                    width: 174px;
+                }
+            }
+        }
+    }
+    .blog-page {
+        .featured {
+            img {
+                height: 305px;
+            }
+            .text {
+                p.description {
+                    height: 286px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
 }
 
 /* Medium devices (landscape tablets, 992px and down) */
 @media only screen and (max-width: 992px) {
+
+    .hero {
+        height: 281px;
+    }
+
     .about {
+        --h2-font-size: 16px;
+        --h3-font-size: 13px;
+        font-size: 8px;
+
         .featured {
             img {
                 width: round(30vw, 100px);
@@ -436,6 +489,39 @@ https://www.w3schools.com/css/css_rwd_mediaqueries.asp
         }
     }
 
+    .blog {
+        --h2-font-size: 26px;
+        --h3-font-size: 16px;
+        font-size: 12px;
+
+        .blog-section {
+            max-width: 780px;
+            height: 346px;
+            
+            .multi-showcase {
+                img {
+                    width: 135px;
+                }
+            }
+            
+            .text {
+                .fancy-button {
+                    width: 89px;
+                    font-size: 14px;
+                    padding: 16px 0px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    .blog-page {
+        .featured {
+            img {
+                height: 205px;
+            }
+        }
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 768px and down) */
@@ -453,4 +539,69 @@ https://www.w3schools.com/css/css_rwd_mediaqueries.asp
             gap: 10px;
         }
     }
+
+    .hero {
+        height: 197px;
+    }
+
+    .blog {
+        --h2-font-size: 12px;
+        --h3-font-size: 12px;
+        font-size: 11px;
+        
+        .featured {
+            margin-bottom: 100px;
+
+            img {
+                width: 99px;
+                height: 150px;
+            }
+
+            .text {
+                p.description {
+                    height: 115px;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .blog-section {
+            max-width: 552px;
+            height: 229px;
+            
+            .multi-showcase {
+                img {
+                    width: 96px;
+                }
+            }
+            
+            .text {
+                p.description {
+                    width: 224px;
+                    height: 103px;
+                    margin: 10px 0;
+                }
+
+                .fancy-button {
+                    width: 89px;
+                    font-size: 12px;
+                    padding: 7px 0px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .blog-page {
+        .featured {
+            img {
+                width: auto;
+            }
+        }
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
 }

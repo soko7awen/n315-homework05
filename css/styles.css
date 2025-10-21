@@ -1,6 +1,8 @@
 @import url("reset.css");
 @import url("nav.css");
 :root {
+  --h2-font-size: 32px;
+  --h3-font-size: 26px;
   --bg-color-primary: white;
   --bg-color-secondary: #587C83;
   --fg-color-primary: black;
@@ -12,10 +14,10 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body h2 {
-  font-size: 32px;
+  font-size: var(--h2-font-size);
 }
 body h3 {
-  font-size: 26px;
+  font-size: var(--h3-font-size);
 }
 
 .page {
@@ -151,7 +153,7 @@ footer .footer-socials {
   align-items: center;
 }
 .home .book-wrap .price {
-  font-size: 32px;
+  font-size: var(--h2-font-size);
   font-weight: bold;
 }
 .home .book-wrap button {
@@ -193,6 +195,7 @@ footer .footer-socials {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .books .books-section .books-flex .book-wrap {
   display: flex;
@@ -228,7 +231,8 @@ footer .footer-socials {
 }
 .blog .blog-section {
   display: flex;
-  width: 76.25%;
+  width: 95%;
+  max-width: 1464px;
   height: 463px;
   background-color: var(--bg-color-secondary);
   margin: 0 auto 125px auto;
@@ -236,23 +240,32 @@ footer .footer-socials {
   text-align: center;
   color: var(--fg-color-secondary);
 }
-.blog .blog-section .multi-showcase {
+.blog .blog-section > img {
   height: 100%;
-  margin-left: 90px;
-  flex-shrink: 0;
+  flex-shrink: 1;
+}
+.blog .blog-section .multi-showcase {
+  display: flex;
+  width: 614px;
+  height: 100%;
+  margin-left: 6.148%;
+  justify-content: space-between;
 }
 .blog .blog-section .multi-showcase img {
-  display: inline-block;
   height: 100%;
   padding: 40px 0;
-  margin-right: 110px;
+  object-fit: contain;
 }
 .blog .blog-section .multi-showcase img:last-of-type {
   margin-right: 0;
 }
 .blog .blog-section .text {
   width: 427px;
+  padding: 0 10px;
   margin: 0 auto;
+}
+.blog .blog-section .text h2 {
+  text-wrap: nowrap;
 }
 .blog .blog-section .text p.description {
   height: 124px;
@@ -316,7 +329,6 @@ Device ranges from W3Schools:
 https://www.w3schools.com/css/css_rwd_mediaqueries.asp
 */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-/* Extra small devices (phones, 600px and down) */
 /* Large devices (laptops/desktops, 1200px and down) */
 @media only screen and (max-width: 1200px) {
   footer .footer-links {
@@ -328,9 +340,38 @@ https://www.w3schools.com/css/css_rwd_mediaqueries.asp
   footer .footer-socials a {
     width: 37px;
   }
+  .hero {
+    height: 365px;
+  }
+  .blog {
+    --h2-font-size: 28px;
+    --h3-font-size: 22px;
+    font-size: 14px;
+  }
+  .blog .blog-section .multi-showcase {
+    justify-content: space-around;
+  }
+  .blog .blog-section .multi-showcase img {
+    width: 174px;
+  }
+  .blog-page .featured img {
+    height: 305px;
+  }
+  .blog-page .featured .text p.description {
+    height: 286px;
+    overflow: hidden;
+  }
 }
 /* Medium devices (landscape tablets, 992px and down) */
 @media only screen and (max-width: 992px) {
+  .hero {
+    height: 281px;
+  }
+  .about {
+    --h2-font-size: 16px;
+    --h3-font-size: 13px;
+    font-size: 8px;
+  }
   .about .featured img {
     width: round(30vw, 100px);
   }
@@ -344,6 +385,27 @@ https://www.w3schools.com/css/css_rwd_mediaqueries.asp
     min-width: unset;
     font-size: 8px;
   }
+  .blog {
+    --h2-font-size: 26px;
+    --h3-font-size: 16px;
+    font-size: 12px;
+  }
+  .blog .blog-section {
+    max-width: 780px;
+    height: 346px;
+  }
+  .blog .blog-section .multi-showcase img {
+    width: 135px;
+  }
+  .blog .blog-section .text .fancy-button {
+    width: 89px;
+    font-size: 14px;
+    padding: 16px 0px;
+    margin-top: 10px;
+  }
+  .blog-page .featured img {
+    height: 205px;
+  }
 }
 /* Small devices (portrait tablets and large phones, 768px and down) */
 @media only screen and (max-width: 768px) {
@@ -356,6 +418,47 @@ https://www.w3schools.com/css/css_rwd_mediaqueries.asp
   footer .footer-socials {
     gap: 10px;
   }
+  .hero {
+    height: 197px;
+  }
+  .blog {
+    --h2-font-size: 12px;
+    --h3-font-size: 12px;
+    font-size: 11px;
+  }
+  .blog .featured {
+    margin-bottom: 100px;
+  }
+  .blog .featured img {
+    width: 99px;
+    height: 150px;
+  }
+  .blog .featured .text p.description {
+    height: 115px;
+    overflow: hidden;
+  }
+  .blog .blog-section {
+    max-width: 552px;
+    height: 229px;
+  }
+  .blog .blog-section .multi-showcase img {
+    width: 96px;
+  }
+  .blog .blog-section .text p.description {
+    width: 224px;
+    height: 103px;
+    margin: 10px 0;
+  }
+  .blog .blog-section .text .fancy-button {
+    width: 89px;
+    font-size: 12px;
+    padding: 7px 0px;
+    margin-top: 0;
+  }
+  .blog-page .featured img {
+    width: auto;
+  }
 }
+/* Extra small devices (phones, 600px and down) */
 
 /*# sourceMappingURL=styles.css.map */
