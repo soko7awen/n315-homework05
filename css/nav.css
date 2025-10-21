@@ -1,69 +1,135 @@
-nav.navbar {
+.topnav {
+  --nav-height: 110px;
+  --nav-icon-size: 50px;
+  --nav-bg-color: rgb(50, 32, 63);
+  --nav-bg-hover: rgb(68, 54, 78);
+  --nav-bg-active: rgb(95, 95, 95);
   display: flex;
+  z-index: 100;
   width: 100%;
-  height: 110px;
+  height: var(--nav-height);
   background-color: #ffffff;
   border-bottom: 1px solid black;
   padding: 0 30px;
   margin-bottom: 160px;
   align-items: center;
+  gap: 115px;
   color: #000000;
 }
-nav.navbar .logo-wordmark {
+.topnav .logo-wordmark {
   display: flex;
   align-items: center;
 }
-nav.navbar .logo-wordmark img {
+.topnav .logo-wordmark img {
   padding-right: 20px;
 }
-nav.navbar .logo-wordmark span {
+.topnav .logo-wordmark span {
   flex-shrink: 0;
 }
-nav.navbar .search-box {
+.topnav .search-box {
   --search-box-height: 44px;
   position: relative;
-  min-width: 275px;
+  min-width: 300px;
   width: 604px;
   height: var(--search-box-height);
-  margin: 0 115px;
 }
-nav.navbar .search-box #searchInput {
+.topnav .search-box #searchInput {
   width: 100%;
   height: 100%;
   background-color: rgba(88, 124, 131, 0.35);
   border: 1px solid #707070;
   padding-left: 40px;
 }
-nav.navbar .search-box .search-icon {
+.topnav .search-box .search-icon {
   --search-icon-height: 25px;
   height: var(--search-icon-height);
   position: absolute;
   top: calc(var(--search-box-height) / 2 - var(--search-icon-height) / 2);
   left: 10px;
 }
-nav.navbar ul {
+.topnav ul {
   display: flex;
   list-style-type: none;
   padding: 0;
-  gap: 10px;
+  gap: 15px;
+  flex-grow: 1;
+  justify-content: space-between;
+  line-height: var(--nav-height);
 }
-nav.navbar ul li {
+.topnav ul li a {
   display: flex;
-  min-width: 128px;
-  justify-content: center;
-  align-items: center;
-}
-nav.navbar ul li a {
-  display: flex;
-  width: fit-content;
+  width: max-content;
   align-items: center;
   color: inherit;
   text-decoration: none;
 }
-nav.navbar ul li a img {
+.topnav ul li a img {
   width: 47px;
   height: 47px;
   margin-left: 10px;
+}
+.topnav ul li a.active {
+  font-weight: bold;
+}
+.topnav ul a.icon {
+  display: none;
+  width: var(--nav-icon-size);
+  height: var(--nav-icon-size);
+  font-size: var(--nav-icon-size);
+  line-height: var(--nav-icon-size);
+  color: inherit;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .topnav ul {
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+  .topnav ul li {
+    display: none;
+  }
+  .topnav ul a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin-left: calc(-1 * var(--nav-icon-size));
+  }
+  .topnav.responsive ul {
+    position: absolute;
+    top: calc((var(--nav-height) - var(--nav-height)) / 2);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+    font-size: 32px;
+  }
+  .topnav.responsive ul li {
+    display: initial;
+    width: 100%;
+  }
+  .topnav.responsive ul li a {
+    width: 100%;
+    text-align: left;
+  }
+  .topnav.responsive ul li a:hover {
+    background-color: var(--nav-bg-hover);
+    color: white;
+  }
+  .topnav.responsive ul li a:hover img {
+    filter: invert(1);
+  }
+  .topnav.responsive ul li a.active {
+    background-color: var(--nav-bg-active);
+    color: white;
+  }
+  .topnav.responsive ul a.icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
 }
 
 /*# sourceMappingURL=nav.css.map */

@@ -1,12 +1,20 @@
-nav.navbar {
+.topnav {
+    --nav-height: 110px;
+    --nav-icon-size: 50px;
+    --nav-bg-color: rgb(50, 32, 63);
+    --nav-bg-hover: rgb(68, 54, 78);
+    --nav-bg-active: rgb(95, 95, 95);
+
     display: flex;
+    z-index: 100;
     width: 100%;
-    height: 110px;
+    height: var(--nav-height);
     background-color: #ffffff;
     border-bottom: 1px solid black;
     padding: 0 30px;
     margin-bottom: 160px;
     align-items: center;
+    gap: 115px;
     color: #000000;
 
     .logo-wordmark {
@@ -25,10 +33,9 @@ nav.navbar {
     .search-box {
         --search-box-height: 44px;
         position: relative;
-        min-width: 275px;
+        min-width: 300px;
         width: 604px;
         height: var(--search-box-height);
-        margin: 0 115px;
 
         #searchInput {
             width: 100%;
@@ -51,17 +58,16 @@ nav.navbar {
         display: flex;
         list-style-type: none;
         padding: 0;
-        gap: 10px;
+        gap: 15px;
+        flex-grow: 1;
+        justify-content: space-between;
+        line-height: var(--nav-height);
 
         li {
-            display: flex;
-            min-width: 128px;
-            justify-content: center;
-            align-items: center;
 
             a {
                 display: flex;
-                width: fit-content;
+                width: max-content;
                 align-items: center;
                 color: inherit;
                 text-decoration: none;
@@ -71,6 +77,84 @@ nav.navbar {
                     height: 47px;
                     margin-left: 10px;
                 }
+            }
+
+            a.active {
+                font-weight: bold;
+            }
+        }
+
+        a.icon {
+            display: none;
+            width: var(--nav-icon-size);
+            height: var(--nav-icon-size);
+            font-size: var(--nav-icon-size);
+            line-height: var(--nav-icon-size);
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .topnav {
+        ul {
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0;
+
+            li {
+                display: none;
+            }
+
+            a.icon {
+                display: block;
+                position: absolute;
+                right: 0;
+                margin-left: calc( -1 * var(--nav-icon-size));
+            }
+        }
+    }
+
+    .topnav.responsive {
+        ul {
+            position: absolute;
+            top: calc( ( var(--nav-height) - var(--nav-height) ) / 2);
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            background-color: white;
+            font-size: 32px;
+
+            li {
+                display: initial;
+                width: 100%;
+
+                a {
+                    width: 100%;
+                    text-align: left;
+
+                    &:hover {
+                        background-color: var(--nav-bg-hover);
+                        color: white;
+
+                        img {
+                            filter: invert(1);
+                        }
+                    }
+                }
+
+                a.active {
+                    background-color: var(--nav-bg-active);
+                    color: white;
+                }
+            }
+    
+            a.icon {
+                position: absolute;
+                top: 30px;
+                right: 30px;
             }
         }
     }

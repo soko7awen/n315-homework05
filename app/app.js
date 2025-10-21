@@ -1,7 +1,10 @@
-import { changePage } from "../model/model.js";
+import { changePage, toggleTopnavResponsive } from "../model/model.js";
 
 function initListeners() {
-
+  $("#app").on("click", "#myTopNavIcon", function (e) {
+    e.preventDefault();
+    toggleTopnavResponsive();
+  });
 }
 
 function route() {
